@@ -134,9 +134,13 @@ extension RSSlideVC: UIScrollViewDelegate {
         setUpOneChildController(idx: idx)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         
         segmentView.selectedIdx = nextIndex()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
         segmentView.titleScrollViewDidScroll(scrollView)
     }
     
