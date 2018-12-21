@@ -75,7 +75,6 @@ class RSExgSegmentView: UIView {
                 label.removeFromSuperview()
             }
             buttonArr.removeAll()
-            currentIndex = selectedIdx
             setupButtonsLayout()
         }
     }

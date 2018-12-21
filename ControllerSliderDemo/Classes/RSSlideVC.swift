@@ -118,7 +118,7 @@ class RSSlideVC: UIViewController {
     public func nextIndex() -> Int {
         
         if contentScrollView.bounds.width == 0 || contentScrollView.bounds.height == 0 {
-            return 0
+            return idx
         }
         let index = Int((contentScrollView.contentOffset.x + contentScrollView.bounds.width * 0.5) / contentScrollView.bounds.width)
         return max(0, index)
@@ -134,13 +134,9 @@ extension RSSlideVC: UIScrollViewDelegate {
         setUpOneChildController(idx: idx)
     }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        
-        segmentView.selectedIdx = nextIndex()
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        segmentView.selectedIdx = nextIndex()
         segmentView.titleScrollViewDidScroll(scrollView)
     }
     
